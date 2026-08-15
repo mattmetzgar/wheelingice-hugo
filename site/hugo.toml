@@ -9,6 +9,7 @@ languageCode = "en-US"
 enableRobotsTXT = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
+ignoreFiles = ["content/contact/.*", "content/products/.*", "content/values/.*"]
 
 [permalinks]
 blog = "/:slug/"

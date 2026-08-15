@@ -5,18 +5,20 @@ describe("Wheeling Ice", () => {
 
   it("opens the index page", () => {
     cy.get("h1").contains("Music for the People");
+    cy.get('.site-banner img[alt="Wheeling Ice"]').should("be.visible");
+    cy.get(".home-art img").should("be.visible");
   });
 
-  it("navigates to the blog page", () => {
-    cy.get('a[href="/blog/"]').eq(0).click();
-    cy.url().should("include", "/blog/");
-    cy.get("ul.blog-posts").should("be.visible");
+  it("shows the social links", () => {
+    cy.get(".social-links a").should("have.length", 3);
+    cy.get('.social-links a[href="https://soundcloud.com/wheelingice"]');
+    cy.get('.social-links a[href="https://youtu.be/p9K8Y5NlK3g"]');
+    cy.get('.social-links a[href="https://twitter.com/wheelingice"]');
   });
-});
 
-describe("validate blog", () => {
-  it("should have only 3 blog posts by default", () => {
-    cy.visit("/blog/");
-    cy.get("ul.blog-posts li").should("have.length", 3);
+  it("contains the full song feed on the homepage", () => {
+    cy.get(".song-feed").should("be.visible");
+    cy.get(".song-entry").should("not.exist");
+    cy.get(".no-songs").contains("New songs will appear here.");
   });
 });
