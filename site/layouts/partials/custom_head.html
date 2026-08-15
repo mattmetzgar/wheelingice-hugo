@@ -45,9 +45,14 @@
 
   .home-intro h1 {
     margin: 0.65rem 0 0;
-    font-size: clamp(1.7rem, 5vw, 2.35rem);
+    display: inline-block;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(1.05rem, 3vw, 1.35rem);
     font-weight: 400;
-    letter-spacing: 0.025em;
+    font-style: italic;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transform: skew(-4deg);
   }
 
   .social-links {
@@ -77,16 +82,6 @@
     display: block;
     width: 30px;
     height: 30px;
-  }
-
-  .home-art {
-    margin: 0 auto 3.5rem;
-    text-align: center;
-  }
-
-  .home-art img {
-    width: min(100%, 384px);
-    height: auto;
   }
 
   .feed-heading {
@@ -145,6 +140,13 @@
 
   .song-body {
     margin-top: 1.25rem;
+  }
+
+  .song-body img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
   }
 
   .song-body > :last-child {

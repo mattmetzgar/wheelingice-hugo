@@ -23,13 +23,9 @@
 </nav>
 {{ end }}
 
-<figure class="home-art">
-  <img src="{{ "img/ice.webp" | relURL }}" alt="Black-and-white drawing of a musician holding a megaphone" width="384" height="512">
-</figure>
-
 {{ $posts := where .Site.RegularPages "Section" "blog" }}
-<section class="song-feed" aria-label="Songs">
-  <h2 class="feed-heading">Songs</h2>
+<section class="song-feed" aria-label="Updates">
+  <h2 class="feed-heading">Updates</h2>
   {{ range $posts.ByDate.Reverse }}
   {{ $post := . }}
   <article class="song-entry" id="{{ .Title | anchorize }}">

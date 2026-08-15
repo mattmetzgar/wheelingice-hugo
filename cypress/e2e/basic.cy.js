@@ -6,7 +6,6 @@ describe("Wheeling Ice", () => {
   it("opens the index page", () => {
     cy.get("h1").contains("Music for the People");
     cy.get('.site-banner img[alt="Wheeling Ice"]').should("be.visible");
-    cy.get(".home-art img").should("be.visible");
   });
 
   it("shows the social links", () => {
@@ -16,9 +15,12 @@ describe("Wheeling Ice", () => {
     cy.get('.social-links a[href="https://twitter.com/wheelingice"]');
   });
 
-  it("contains the full song feed on the homepage", () => {
+  it("contains the full update feed on the homepage", () => {
     cy.get(".song-feed").should("be.visible");
-    cy.get(".song-entry").should("not.exist");
-    cy.get(".no-songs").contains("New songs will appear here.");
+    cy.get(".feed-heading").contains("Updates");
+    cy.get(".song-entry").should("have.length", 1);
+    cy.get(".song-entry").contains("Origin Album");
+    cy.get('.song-body img[src*="ice.webp"]').should("be.visible");
+    cy.get(".song-body").contains("Origin");
   });
 });
