@@ -1,12 +1,21 @@
-baseurl = "/"
-languageCode = "en-us"
-languageLang = "en"
-title = "Kaldi"
+baseURL = "/"
+theme = "hugo-bearblog"
 
-# RSS, categories and tags disabled for an easy start
-# See configuration options for more details: 
-# https://gohugo.io/getting-started/configuration/#toml-configuration
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+title = "Wheeling Ice"
+author = "Wheeling Ice"
+copyright = "Copyright © 2026, Wheeling Ice."
+languageCode = "en-US"
+
+enableRobotsTXT = true
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
+
+[permalinks]
+blog = "/:slug/"
 
 [params]
+description = "Music for the People"
+favicon = "img/favicon-32x32.png"
 images = ["img/og-image.jpg"]
+title = "Wheeling Ice"
+dateFormat = "January 2, 2006"

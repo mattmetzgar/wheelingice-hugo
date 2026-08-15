@@ -1,4 +1,5 @@
 [build.environment]
+  HUGO_VERSION = "0.162.0"
   NETLIFY_USE_YARN = "true"
   YARN_VERSION = "1.22.17"
 
