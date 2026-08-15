@@ -3,11 +3,36 @@
   {{ .Content }}
 </section>
 
+{{ with hugo.Data.social }}
+<nav class="social-links" aria-label="Listen to and follow Wheeling Ice">
+  {{ with .soundcloud }}
+  <a href="{{ . }}" aria-label="Wheeling Ice on SoundCloud" rel="me">
+    <img src="{{ "img/social-soundcloud.svg" | relURL }}" alt="" width="32" height="32">
+  </a>
+  {{ end }}
+  {{ with .youtube }}
+  <a href="{{ . }}" aria-label="Wheeling Ice on YouTube">
+    <img src="{{ "img/social-youtube.svg" | relURL }}" alt="" width="32" height="32">
+  </a>
+  {{ end }}
+  {{ with .twitter }}
+  <a href="{{ . }}" aria-label="Wheeling Ice on X / Twitter" rel="me">
+    <img src="{{ "img/social-x.svg" | relURL }}" alt="" width="32" height="32">
+  </a>
+  {{ end }}
+</nav>
+{{ end }}
+
+<figure class="home-art">
+  <img src="{{ "img/ice.webp" | relURL }}" alt="Black-and-white drawing of a musician holding a megaphone" width="384" height="512">
+</figure>
+
 {{ $posts := where .Site.RegularPages "Section" "blog" }}
 <section class="song-feed" aria-label="Songs">
+  <h2 class="feed-heading">Songs</h2>
   {{ range $posts.ByDate.Reverse }}
   {{ $post := . }}
-  <article class="song-entry" id="{{ .Slug }}">
+  <article class="song-entry" id="{{ .Title | anchorize }}">
     <header class="song-header">
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       <time datetime="{{ .Date.Format "2006-01-02" }}">

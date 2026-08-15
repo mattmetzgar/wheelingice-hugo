@@ -20,8 +20,8 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Short Description", name: "description", widget: "text", required: false}
-      - {label: "Drawing", name: "image", widget: "image", required: false}
-      - {label: "Audio File", name: "audio", widget: "file", required: false, media_library: {config: {multiple: false}}}
+      - {label: "Drawing", name: "image", widget: "image", required: false, allow_multiple: false}
+      - {label: "Audio File", name: "audio", widget: "file", required: false, allow_multiple: false, choose_url: false}
       - {label: "Listening Link", name: "listen_url", widget: "string", required: false, hint: "Optional SoundCloud, YouTube, or other listening URL"}
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Text", name: "body", widget: "markdown", required: false}
@@ -35,3 +35,14 @@ collections:
         fields:
           - {label: "Page Title", name: "title", widget: "string"}
           - {label: "Intro Text", name: "body", widget: "markdown", required: false}
+
+  - name: "site_settings"
+    label: "Site Settings"
+    files:
+      - file: "site/data/social.json"
+        label: "Social Links"
+        name: "social"
+        fields:
+          - {label: "SoundCloud URL", name: "soundcloud", widget: "string", required: false}
+          - {label: "YouTube URL", name: "youtube", widget: "string", required: false}
+          - {label: "X / Twitter URL", name: "twitter", widget: "string", required: false}

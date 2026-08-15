@@ -1,0 +1,164 @@
+<style>
+  :root {
+    color-scheme: light;
+    --width: 760px;
+    --font-main: Georgia, "Times New Roman", serif;
+    --font-secondary: Georgia, "Times New Roman", serif;
+    --background-color: #fff;
+    --heading-color: #111;
+    --text-color: #222;
+    --link-color: #007d99;
+    --visited-color: #675078;
+    --blockquote-color: #333;
+    --ice-blue: #08b9df;
+  }
+
+  body {
+    padding: clamp(18px, 4vw, 34px);
+    line-height: 1.65;
+  }
+
+  body > header {
+    margin: 0 auto 1.2rem;
+    text-align: center;
+  }
+
+  .site-banner {
+    display: block;
+    line-height: 0;
+  }
+
+  .site-banner:hover {
+    text-decoration: none;
+  }
+
+  .site-banner img {
+    display: block;
+    width: min(100%, 622px);
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .home-intro {
+    text-align: center;
+  }
+
+  .home-intro h1 {
+    margin: 0.65rem 0 0;
+    font-size: clamp(1.7rem, 5vw, 2.35rem);
+    font-weight: 400;
+    letter-spacing: 0.025em;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.45rem;
+    margin: 1.25rem 0 2rem;
+  }
+
+  .social-links a {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 4px;
+  }
+
+  .social-links a:hover,
+  .social-links a:focus-visible {
+    background: #eefbfe;
+    outline: 2px solid var(--ice-blue);
+    outline-offset: 3px;
+  }
+
+  .social-links img {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  .home-art {
+    margin: 0 auto 3.5rem;
+    text-align: center;
+  }
+
+  .home-art img {
+    width: min(100%, 384px);
+    height: auto;
+  }
+
+  .feed-heading {
+    margin: 0;
+    padding-bottom: 0.45rem;
+    border-bottom: 3px solid var(--ice-blue);
+    font-size: 1.45rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .song-entry {
+    padding: 2.5rem 0 3rem;
+    border-bottom: 1px dashed #777;
+  }
+
+  .song-entry:last-child {
+    border-bottom: 0;
+  }
+
+  .song-header h2 {
+    margin: 0 0 0.15rem;
+    font-size: clamp(1.55rem, 4vw, 2rem);
+    line-height: 1.25;
+  }
+
+  .song-header h2 a {
+    color: var(--heading-color);
+  }
+
+  .song-header time {
+    color: #666;
+  }
+
+  .song-art {
+    margin: 1.5rem 0;
+  }
+
+  .song-art img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .song-audio {
+    width: 100%;
+    margin: 1.25rem 0 0.5rem;
+  }
+
+  .song-listen {
+    margin: 0.8rem 0;
+  }
+
+  .song-body {
+    margin-top: 1.25rem;
+  }
+
+  .song-body > :last-child {
+    margin-bottom: 0;
+  }
+
+  .no-songs {
+    margin: 1.25rem 0 0;
+    font-style: italic;
+  }
+
+  body > footer {
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
+    color: #666;
+  }
+</style>

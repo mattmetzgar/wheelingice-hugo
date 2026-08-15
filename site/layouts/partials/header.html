@@ -1,0 +1,10 @@
+<a href="{{ "" | relURL }}" class="site-banner" aria-label="Wheeling Ice home">
+  <img src="{{ "img/wheelingice-logo.webp" | relURL }}" alt="Wheeling Ice" width="622" height="143">
+</a>
+{{ with .Site.Menus.main }}
+<nav aria-label="Main navigation">
+  {{ range . }}
+  <a href="{{ .URL }}">{{ .Name }}</a>
+  {{ end }}
+</nav>
+{{ end }}
