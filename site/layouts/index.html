@@ -1,0 +1,50 @@
+{{ define "main" }}
+<section class="home-intro">
+  {{ .Content }}
+</section>
+
+{{ $posts := where .Site.RegularPages "Section" "blog" }}
+<section class="song-feed" aria-label="Songs">
+  {{ range $posts.ByDate.Reverse }}
+  {{ $post := . }}
+  <article class="song-entry" id="{{ .Slug }}">
+    <header class="song-header">
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">
+        {{ .Date.Format (default "January 2, 2006" .Site.Params.dateFormat) }}
+      </time>
+    </header>
+
+    {{ with .Params.image }}
+    {{ $imageURL := . | relURL }}
+    {{ with $post.Resources.GetMatch . }}
+      {{ $imageURL = .RelPermalink }}
+    {{ end }}
+    <figure class="song-art">
+      <img src="{{ $imageURL }}" alt="Drawing for {{ $post.Title }}" loading="lazy">
+    </figure>
+    {{ end }}
+
+    {{ with .Params.audio }}
+    {{ $audioURL := . | relURL }}
+    {{ with $post.Resources.GetMatch . }}
+      {{ $audioURL = .RelPermalink }}
+    {{ end }}
+    <audio class="song-audio" controls preload="metadata" src="{{ $audioURL }}">
+      <a href="{{ $audioURL }}">Download {{ $post.Title }}</a>
+    </audio>
+    {{ end }}
+
+    {{ with .Params.listen_url }}
+    <p class="song-listen"><a href="{{ . }}" rel="me">Listen to {{ $post.Title }} ↗</a></p>
+    {{ end }}
+
+    <div class="song-body">
+      {{ .Content }}
+    </div>
+  </article>
+  {{ else }}
+  <p class="no-songs">New songs will appear here.</p>
+  {{ end }}
+</section>
+{{ end }}
