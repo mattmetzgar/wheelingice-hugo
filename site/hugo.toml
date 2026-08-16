@@ -16,7 +16,7 @@ blog = "/:slug/"
 
 [params]
 description = "Music for the People"
-images = ["img/wheelingice-logo.webp"]
+images = ["img/wheelingice-logo.png"]
 title = "Wheeling Ice"
 dateFormat = "January 2, 2006"
 hideMadeWithLine = true
