@@ -18,6 +18,7 @@ collections:
       preview: false
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "URL Slug", name: "slug", widget: "string", hint: "The web address for this post, such as offensive-1. Use lowercase letters, numbers, and hyphens only.", pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Use lowercase letters, numbers, and hyphens only."]}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Short Description", name: "description", widget: "text", required: false}
       - {label: "Drawing", name: "image", widget: "image", required: false, allow_multiple: false}
