@@ -16,7 +16,7 @@ blog = "/:slug/"
 
 [params]
 description = "Music for the People"
-favicon = "favicon.ico?v=3"
+favicon = "favicon.ico?v=4"
 images = ["img/wheelingice-logo.png"]
 title = "Wheeling Ice"
 dateFormat = "January 2, 2006"

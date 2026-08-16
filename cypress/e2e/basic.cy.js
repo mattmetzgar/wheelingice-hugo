@@ -6,8 +6,8 @@ describe("Wheeling Ice", () => {
   it("opens the index page", () => {
     cy.get("h1").contains("Music for the People");
     cy.get('.site-banner img[alt="Wheeling Ice"]').should("be.visible");
-    cy.get('link[rel="icon"][href="/favicon.ico?v=3"]');
-    cy.get('link[rel="icon"][href="/favicon.svg?v=3"]');
+    cy.get('link[rel="icon"][href="/favicon.ico?v=4"]');
+    cy.get('link[rel="icon"][href="/favicon.svg?v=4"]');
   });
 
   it("shows the social links", () => {
