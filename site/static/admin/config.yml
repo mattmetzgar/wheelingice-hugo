@@ -6,9 +6,9 @@ media_folder: "site/static/img"
 public_folder: "/img"
 
 collections:
-  - name: "songs"
-    label: "Songs"
-    label_singular: "Song"
+  - name: "posts"
+    label: "Posts"
+    label_singular: "Post"
     folder: "site/content/blog"
     path: "{{slug}}/index"
     media_folder: ""
