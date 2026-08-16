@@ -4,7 +4,7 @@ theme = "hugo-bearblog"
 title = "Wheeling Ice"
 author = "Wheeling Ice"
 copyright = "Copyright © 2026, Wheeling Ice."
-languageCode = "en-US"
+locale = "en-US"
 
 enableRobotsTXT = true
 disableKinds = ["taxonomy"]
