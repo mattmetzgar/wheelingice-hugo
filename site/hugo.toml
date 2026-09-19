@@ -12,7 +12,7 @@ ignoreErrors = ["error-disable-taxonomy"]
 ignoreFiles = ["content/contact/.*", "content/products/.*", "content/values/.*"]
 
 [permalinks]
-blog = "/:slug/"
+blog = "/:slugorcontentbasename/"
 
 [params]
 description = "Music for the People"
