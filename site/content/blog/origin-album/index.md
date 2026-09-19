@@ -1,5 +1,6 @@
 ---
 title: Origin Album
+cms_type: post
 date: 2020-08-28T12:00:00-04:00
 description: New album “Origin” released August 28, 2020.
 draft: false
