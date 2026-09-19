@@ -5,6 +5,11 @@ backend:
 media_folder: "site/static/img"
 public_folder: "/img"
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
 collections:
   - name: "posts"
     label: "Posts"
@@ -19,8 +24,7 @@ collections:
       preview: false
     fields:
       - {label: "Content Type", name: "cms_type", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "URL Slug", name: "slug", widget: "string", hint: "The web address for this post, such as offensive-1. Use lowercase letters, numbers, and hyphens only.", pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Use lowercase letters, numbers, and hyphens only."]}
+      - {label: "Title", name: "title", widget: "string", hint: "The page URL is generated automatically from the title."}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Short Description", name: "description", widget: "text", required: false}
       - {label: "Drawing", name: "image", widget: "image", required: false, allow_multiple: false}
