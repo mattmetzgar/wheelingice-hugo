@@ -1,5 +1,15 @@
 {{- $src := .Destination -}}
+{{- $width := 0 -}}
+{{- $height := 0 -}}
 {{- with .Page.Resources.GetMatch .Destination -}}
   {{- $src = .RelPermalink -}}
+  {{- if eq .ResourceType "image" -}}
+    {{- if ne .MediaType.SubType "svg+xml" -}}
+      {{- $optimized := .Fit "1000x1000 webp q80" -}}
+      {{- $src = $optimized.RelPermalink -}}
+      {{- $width = $optimized.Width -}}
+      {{- $height = $optimized.Height -}}
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
-<img src="{{ $src | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+<img src="{{ $src | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if gt $width 0 }} width="{{ $width }}" height="{{ $height }}"{{ end }} decoding="async">
